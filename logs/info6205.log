@@ -1,0 +1,56 @@
+2023-01-31 21:08:49 INFO  TimeLogger - (Quadratic) Raw time per run (mSec):  1.84
+2023-01-31 21:08:49 INFO  TimeLogger - (Quadratic) Normalized time per run (n^2):  29.44
+2023-01-31 21:08:49 INFO  TimeLogger - (Quadratic with Calipers) Raw time per run (mSec):  1.09
+2023-01-31 21:08:49 INFO  TimeLogger - (Quadratic with Calipers) Normalized time per run (n^2):  17.44
+2023-01-31 21:08:50 INFO  TimeLogger - (Quadrithmic) Raw time per run (mSec):  1.08
+2023-01-31 21:08:50 INFO  TimeLogger - (Quadrithmic) Normalized time per run (n^2 log n):  2.17
+2023-01-31 21:08:50 INFO  TimeLogger - (Cubic) Raw time per run (mSec):  5.97
+2023-01-31 21:08:50 INFO  TimeLogger - (Cubic) Normalized time per run (n^3):  .38
+2023-01-31 21:08:50 INFO  TimeLogger - (Quadratic) Raw time per run (mSec):  3.14
+2023-01-31 21:08:50 INFO  TimeLogger - (Quadratic) Normalized time per run (n^2):  12.56
+2023-01-31 21:08:50 INFO  TimeLogger - (Quadratic with Calipers) Raw time per run (mSec):  1.14
+2023-01-31 21:08:50 INFO  TimeLogger - (Quadratic with Calipers) Normalized time per run (n^2):  4.56
+2023-01-31 21:08:51 INFO  TimeLogger - (Quadrithmic) Raw time per run (mSec):  2.88
+2023-01-31 21:08:51 INFO  TimeLogger - (Quadrithmic) Normalized time per run (n^2 log n):  1.28
+2023-01-31 21:08:53 INFO  TimeLogger - (Cubic) Raw time per run (mSec):  40.68
+2023-01-31 21:08:53 INFO  TimeLogger - (Cubic) Normalized time per run (n^3):  .33
+2023-01-31 21:08:53 INFO  TimeLogger - (Quadratic) Raw time per run (mSec):  6.80
+2023-01-31 21:08:53 INFO  TimeLogger - (Quadratic) Normalized time per run (n^2):  6.80
+2023-01-31 21:08:53 INFO  TimeLogger - (Quadratic with Calipers) Raw time per run (mSec):  4.25
+2023-01-31 21:08:53 INFO  TimeLogger - (Quadratic with Calipers) Normalized time per run (n^2):  4.25
+2023-01-31 21:08:53 INFO  TimeLogger - (Quadrithmic) Raw time per run (mSec):  14.25
+2023-01-31 21:08:53 INFO  TimeLogger - (Quadrithmic) Normalized time per run (n^2 log n):  1.43
+2023-01-31 21:08:59 INFO  TimeLogger - (Cubic) Raw time per run (mSec):  317.90
+2023-01-31 21:08:59 INFO  TimeLogger - (Cubic) Normalized time per run (n^3):  .32
+2023-01-31 21:09:00 INFO  TimeLogger - (Quadratic) Raw time per run (mSec):  28.20
+2023-01-31 21:09:00 INFO  TimeLogger - (Quadratic) Normalized time per run (n^2):  7.05
+2023-01-31 21:09:00 INFO  TimeLogger - (Quadratic with Calipers) Raw time per run (mSec):  19.00
+2023-01-31 21:09:00 INFO  TimeLogger - (Quadratic with Calipers) Normalized time per run (n^2):  4.75
+2023-01-31 21:09:01 INFO  TimeLogger - (Quadrithmic) Raw time per run (mSec):  71.40
+2023-01-31 21:09:01 INFO  TimeLogger - (Quadrithmic) Normalized time per run (n^2 log n):  1.63
+2023-01-31 21:09:26 INFO  TimeLogger - (Cubic) Raw time per run (mSec):  2518.70
+2023-01-31 21:09:26 INFO  TimeLogger - (Cubic) Normalized time per run (n^3):  .31
+2023-01-31 21:09:27 INFO  TimeLogger - (Quadratic) Raw time per run (mSec):  149.20
+2023-01-31 21:09:27 INFO  TimeLogger - (Quadratic) Normalized time per run (n^2):  9.32
+2023-01-31 21:09:27 INFO  TimeLogger - (Quadratic with Calipers) Raw time per run (mSec):  91.80
+2023-01-31 21:09:27 INFO  TimeLogger - (Quadratic with Calipers) Normalized time per run (n^2):  5.74
+2023-01-31 21:09:29 INFO  TimeLogger - (Quadrithmic) Raw time per run (mSec):  332.60
+2023-01-31 21:09:29 INFO  TimeLogger - (Quadrithmic) Normalized time per run (n^2 log n):  1.74
+2023-01-31 21:11:09 INFO  TimeLogger - (Cubic) Raw time per run (mSec):  20007.60
+2023-01-31 21:11:09 INFO  TimeLogger - (Cubic) Normalized time per run (n^3):  .31
+2023-01-31 21:11:11 INFO  TimeLogger - (Quadratic) Raw time per run (mSec):  686.67
+2023-01-31 21:11:11 INFO  TimeLogger - (Quadratic) Normalized time per run (n^2):  10.73
+2023-01-31 21:11:12 INFO  TimeLogger - (Quadratic with Calipers) Raw time per run (mSec):  527.67
+2023-01-31 21:11:12 INFO  TimeLogger - (Quadratic with Calipers) Normalized time per run (n^2):  8.24
+2023-01-31 21:11:17 INFO  TimeLogger - (Quadrithmic) Raw time per run (mSec):  1466.33
+2023-01-31 21:11:17 INFO  TimeLogger - (Quadrithmic) Normalized time per run (n^2 log n):  1.77
+2023-01-31 21:19:22 INFO  TimeLogger - (Cubic) Raw time per run (mSec):  161619.00
+2023-01-31 21:19:22 INFO  TimeLogger - (Cubic) Normalized time per run (n^3):  .32
+2023-01-31 21:19:27 INFO  TimeLogger - (Quadratic) Raw time per run (mSec):  2676.50
+2023-01-31 21:19:27 INFO  TimeLogger - (Quadratic) Normalized time per run (n^2):  10.46
+2023-01-31 21:19:32 INFO  TimeLogger - (Quadratic with Calipers) Raw time per run (mSec):  2263.50
+2023-01-31 21:19:32 INFO  TimeLogger - (Quadratic with Calipers) Normalized time per run (n^2):  8.84
+2023-01-31 21:19:45 INFO  TimeLogger - (Quadrithmic) Raw time per run (mSec):  6888.00
+2023-01-31 21:19:45 INFO  TimeLogger - (Quadrithmic) Normalized time per run (n^2 log n):  1.93
+2023-01-31 22:02:37 INFO  TimeLogger - (Cubic) Raw time per run (mSec):  1285873.00
+2023-01-31 22:02:37 INFO  TimeLogger - (Cubic) Normalized time per run (n^3):  .31
