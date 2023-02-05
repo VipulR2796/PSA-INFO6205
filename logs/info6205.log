@@ -54,3 +54,6 @@
 2023-01-31 21:19:45 INFO  TimeLogger - (Quadrithmic) Normalized time per run (n^2 log n):  1.93
 2023-01-31 22:02:37 INFO  TimeLogger - (Cubic) Raw time per run (mSec):  1285873.00
 2023-01-31 22:02:37 INFO  TimeLogger - (Cubic) Normalized time per run (n^3):  .31
+2023-02-04 17:39:31 INFO  Benchmark_Timer - Begin run: testWaitPeriods with 2 runs
+2023-02-04 19:52:24 INFO  Benchmark_Timer - Begin run: testWaitPeriods with 2 runs
+2023-02-04 19:53:17 INFO  Benchmark_Timer - Begin run: testWaitPeriods with 2 runs
