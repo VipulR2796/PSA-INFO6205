@@ -85,6 +85,7 @@ public class UF_HWQUPC_Test {
     @Test
     public void testFind1() {
         UF h = new UF_HWQUPC(2);
+//        System.out.println(h.);
         h.connect(0, 1);
         assertEquals(0, h.find(0));
         assertEquals(0, h.find(1));
