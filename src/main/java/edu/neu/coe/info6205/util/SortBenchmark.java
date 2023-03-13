@@ -3,13 +3,12 @@
  */
 package edu.neu.coe.info6205.util;
 
-import edu.neu.coe.info6205.sort.BaseHelper;
-import edu.neu.coe.info6205.sort.Helper;
-import edu.neu.coe.info6205.sort.SortWithHelper;
+import edu.neu.coe.info6205.sort.*;
 import edu.neu.coe.info6205.sort.elementary.BubbleSort;
 import edu.neu.coe.info6205.sort.elementary.InsertionSort;
 import edu.neu.coe.info6205.sort.elementary.RandomSort;
 import edu.neu.coe.info6205.sort.elementary.ShellSort;
+import edu.neu.coe.info6205.sort.elementary.HeapSort;
 import edu.neu.coe.info6205.sort.linearithmic.TimSort;
 import edu.neu.coe.info6205.sort.linearithmic.*;
 
@@ -31,19 +30,150 @@ import static edu.neu.coe.info6205.util.Utilities.formatWhole;
 
 public class SortBenchmark {
 
+    private static Integer[] generateRandomArray(int size) {
+        Integer[] array = new Integer[size];
+        Random random = new Random();
+        for (int i = 0; i < size; i++) {
+            array[i] = random.nextInt();
+        }
+        return array;
+    }
+
     public SortBenchmark(Config config) {
         this.config = config;
     }
 
-    public static void main(String[] args) throws IOException {
-        Config config = Config.load(SortBenchmark.class);
-        logger.info("SortBenchmark.main: " + config.get("SortBenchmark", "version") + " with word counts: " + Arrays.toString(args));
-        if (args.length == 0) logger.warn("No word counts specified on the command line");
-        SortBenchmark benchmark = new SortBenchmark(config);
-        benchmark.sortIntegersByShellSort(config.getInt("shellsort", "n", 100000));
-        benchmark.sortStrings(Arrays.stream(args).map(Integer::parseInt));
-        benchmark.sortLocalDateTimes(config.getInt("benchmarkdatesorters", "n", 100000), config);
+    public static void main(String[] args) throws Exception {
+//        Config config = Config.load(SortBenchmark.class);
+//        logger.info("SortBenchmark.main: " + config.get("SortBenchmark", "version") + " with word counts: " + Arrays.toString(args));
+//        if (args.length == 0) logger.warn("No word counts specified on the command line");
+//        SortBenchmark benchmark = new SortBenchmark(config);
+//        benchmark.sortIntegersByShellSort(config.getInt("shellsort", "n", 100000));
+//        benchmark.sortStrings(Arrays.stream(args).map(Integer::parseInt));
+//        benchmark.sortLocalDateTimes(config.getInt("benchmarkdatesorters", "n", 100000), config);
+
+        final Config config = Config.setupConfig("true", "0", "1", "1", "");
+
+        for(int i = 10000; i <= 256000; i *= 2) {
+            runMergeSortBenchmark(i, config);
+            runQuickSortBenchmark(i, config);
+            runHeapSortBenchmark(i, config);
+        }
+        // 10, 20 40 80 160 32 64 128 256
     }
+
+
+    public static void runMergeSortBenchmark(int size, Config config) throws Exception {
+
+        int n = size;
+
+
+
+        // Merge Sort
+        BaseHelper<Integer> helper1 = new InstrumentedHelper<>("test", config);
+
+        MergeSortBasic<Integer> merge = new MergeSortBasic<>(helper1);
+
+        Consumer<Integer[]> randomFunc1 = randArr1 -> merge.sort(randArr1);
+        Benchmark_Timer<Integer[]> randomTimer1 = new Benchmark_Timer<>("Sort array of " + n + " elements", randomFunc1);
+        Supplier<Integer[]> random1 = () -> {
+            Random randI = new Random();
+            Integer[] randArr1 = new Integer[n];
+            for(int i=0; i<n; i++) {
+                int randInt = randI.nextInt(n);
+                randArr1[i] = randInt+1;
+            }
+            return randArr1;
+        };
+        randomFunc1.accept(random1.get());
+        double randTime1 = randomTimer1.run(random1.get(), 1);
+        System.out.println("Mergesort Time for array of " + n + " elements is: " + randTime1);
+
+        helper1.postProcess(merge.sort(random1.get()));
+
+        PrivateMethodTester privateMethodTester1 = new PrivateMethodTester(helper1);
+        StatPack statPack1 = (StatPack) privateMethodTester1.invokePrivate("getStatPack");
+
+        long mergeCompares = (long) statPack1.getStatistics(InstrumentedHelper.COMPARES).mean();
+        long mergeSwaps = (long) statPack1.getStatistics(InstrumentedHelper.SWAPS).mean();
+        long mergeHits = (long) statPack1.getStatistics(InstrumentedHelper.HITS).mean();
+        System.out.println("Compares = " + mergeCompares);
+        System.out.println("Swaps = " + mergeSwaps);
+        System.out.println("Hits = " + mergeHits);
+
+    }
+    public static void runQuickSortBenchmark(int size, Config config) throws Exception {
+
+        int n =size;
+        BaseHelper<Integer> helper = new InstrumentedHelper<>("test", config);
+
+        QuickSort<Integer> quick = new QuickSort_DualPivot<>(helper);
+
+        Consumer<Integer[]> randomFunc = randArr -> quick.sort(randArr);
+        Benchmark_Timer<Integer[]> randomTimer = new Benchmark_Timer<>("Sort array of " + n + " elements", randomFunc);
+        Supplier<Integer[]> random = () -> {
+            Random randI = new Random();
+            Integer[] randArr = new Integer[n];
+            for(int i=0; i<n; i++) {
+                int randInt = randI.nextInt(n);
+                randArr[i] = randInt+1;
+            }
+            return randArr;
+        };
+        randomFunc.accept(random.get());
+        double randTime = randomTimer.run(random.get(), 1);
+        System.out.println("Quicksort Time for array of " + n + " elements is: " + randTime);
+
+        helper.postProcess(quick.sort(random.get()));
+        PrivateMethodTester privateMethodTester = new PrivateMethodTester(helper);
+        StatPack statPack = (StatPack) privateMethodTester.invokePrivate("getStatPack");
+
+        long quickCompares = (long) statPack.getStatistics(InstrumentedHelper.COMPARES).mean();
+        long quickSwaps = (long) statPack.getStatistics(InstrumentedHelper.SWAPS).mean();
+        long quickHits = (long) statPack.getStatistics(InstrumentedHelper.HITS).mean();
+        System.out.println("Compares = " + quickCompares);
+        System.out.println("Swaps = " + quickSwaps);
+        System.out.println("Hits = " + quickHits);
+
+    }
+    public static void runHeapSortBenchmark(int size, Config config) throws Exception {
+
+        int n = size;
+        BaseHelper<Integer> helper2 = new InstrumentedHelper<>("test", config);
+
+        HeapSort<Integer> heap = new HeapSort<>(helper2);
+
+        Consumer<Integer[]> randomFunc2 = randArr2 -> heap.sort(randArr2);
+        Benchmark_Timer<Integer[]> randomTimer2 = new Benchmark_Timer<>("Sort array of " + n + " elements", randomFunc2);
+        Supplier<Integer[]> random2 = () -> {
+            Random randI = new Random();
+            Integer[] randArr2 = new Integer[n];
+            for(int i=0; i<n; i++) {
+                int randInt = randI.nextInt(n);
+                randArr2[i] = randInt+1;
+            }
+            return randArr2;
+        };
+        randomFunc2.accept(random2.get());
+        double randTime2 = randomTimer2.run(random2.get(), 1);
+        System.out.println("Heapsort Time for array of " + n + " elements is: " + randTime2);
+
+        helper2.postProcess(heap.sort(random2.get()));
+
+        PrivateMethodTester privateMethodTester2 = new PrivateMethodTester(helper2);
+        StatPack statPack2 = (StatPack) privateMethodTester2.invokePrivate("getStatPack");
+
+        long heapCompares = (long) statPack2.getStatistics(InstrumentedHelper.COMPARES).mean();
+        long heapSwaps = (long) statPack2.getStatistics(InstrumentedHelper.SWAPS).mean();
+        long heapHits = (long) statPack2.getStatistics(InstrumentedHelper.HITS).mean();
+        System.out.println("Compares = " + heapCompares);
+        System.out.println("Swaps = " + heapSwaps);
+        System.out.println("Hits = " + heapHits);
+
+    }
+
+
+
 
     public void sortLocalDateTimes(final int n, Config config) throws IOException {
         logger.info("Beginning LocalDateTime sorts");
@@ -99,6 +229,11 @@ public class SortBenchmark {
 
         if (isConfigBenchmarkStringSorter("quicksort"))
             runStringSortBenchmark(words, nWords, nRuns, new QuickSort_Basic<>(nWords, config), timeLoggersLinearithmic);
+
+        if (isConfigBenchmarkStringSorter("heapsort")) {
+            Helper<String> helper = HelperFactory.create("Heapsort", nWords, config);
+            runStringSortBenchmark(words, nWords, nRuns, new HeapSort<>(helper), timeLoggersLinearithmic);
+        }
 
         if (isConfigBenchmarkStringSorter("introsort"))
             runStringSortBenchmark(words, nWords, nRuns, new IntroSort<>(nWords, config), timeLoggersLinearithmic);

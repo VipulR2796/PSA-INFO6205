@@ -57,3 +57,32 @@
 2023-02-04 17:39:31 INFO  Benchmark_Timer - Begin run: testWaitPeriods with 2 runs
 2023-02-04 19:52:24 INFO  Benchmark_Timer - Begin run: testWaitPeriods with 2 runs
 2023-02-04 19:53:17 INFO  Benchmark_Timer - Begin run: testWaitPeriods with 2 runs
+2023-03-12 22:52:06 INFO  Benchmark_Timer - Begin run: Sorts array of 10000 elements with 1 runs
+2023-03-12 22:52:08 INFO  Benchmark_Timer - Begin run: Sorts array of 10000 elements with 1 runs
+2023-03-12 22:52:10 INFO  Benchmark_Timer - Begin run: Sorts array of 10000 elements with 1 runs
+2023-03-12 22:52:19 INFO  Benchmark_Timer - Begin run: Sorts array of 10000 elements with 1 runs
+2023-03-12 22:52:50 INFO  Benchmark_Timer - Begin run: Sorts array of 10000 elements with 1 runs
+2023-03-12 22:58:45 INFO  Benchmark_Timer - Begin run: Sort array of 10000 elements with 1 runs
+2023-03-12 22:58:47 INFO  Benchmark_Timer - Begin run: Sort array of 10000 elements with 1 runs
+2023-03-12 22:58:48 INFO  Benchmark_Timer - Begin run: Sort array of 10000 elements with 1 runs
+2023-03-12 22:58:49 INFO  Benchmark_Timer - Begin run: Sort array of 10000 elements with 1 runs
+2023-03-12 22:58:51 INFO  Benchmark_Timer - Begin run: Sort array of 10000 elements with 1 runs
+2023-03-12 23:03:12 INFO  Benchmark_Timer - Begin run: Sort array of 10000 elements with 1 runs
+2023-03-12 23:03:13 INFO  Benchmark_Timer - Begin run: Sort array of 10000 elements with 1 runs
+2023-03-12 23:03:14 INFO  Benchmark_Timer - Begin run: Sort array of 10000 elements with 1 runs
+2023-03-12 23:03:15 INFO  Benchmark_Timer - Begin run: Sort array of 10000 elements with 1 runs
+2023-03-12 23:03:16 INFO  Benchmark_Timer - Begin run: Sort array of 10000 elements with 1 runs
+2023-03-12 23:16:28 INFO  Benchmark_Timer - Begin run: Sort array of 10000 elements with 1 runs
+2023-03-12 23:16:29 INFO  Benchmark_Timer - Begin run: Sort array of 10000 elements with 1 runs
+2023-03-12 23:16:30 INFO  Benchmark_Timer - Begin run: Sort array of 10000 elements with 1 runs
+2023-03-12 23:16:32 INFO  Benchmark_Timer - Begin run: Sort array of 20000 elements with 1 runs
+2023-03-12 23:16:37 INFO  Benchmark_Timer - Begin run: Sort array of 20000 elements with 1 runs
+2023-03-12 23:16:42 INFO  Benchmark_Timer - Begin run: Sort array of 20000 elements with 1 runs
+2023-03-12 23:16:50 INFO  Benchmark_Timer - Begin run: Sort array of 40000 elements with 1 runs
+2023-03-12 23:17:13 INFO  Benchmark_Timer - Begin run: Sort array of 40000 elements with 1 runs
+2023-03-12 23:17:31 INFO  Benchmark_Timer - Begin run: Sort array of 40000 elements with 1 runs
+2023-03-12 23:18:05 INFO  Benchmark_Timer - Begin run: Sort array of 80000 elements with 1 runs
+2023-03-12 23:19:30 INFO  Benchmark_Timer - Begin run: Sort array of 80000 elements with 1 runs
+2023-03-12 23:20:43 INFO  Benchmark_Timer - Begin run: Sort array of 80000 elements with 1 runs
+2023-03-12 23:23:45 INFO  Benchmark_Timer - Begin run: Sort array of 160000 elements with 1 runs
+2023-03-12 23:32:24 INFO  Benchmark_Timer - Begin run: Sort array of 160000 elements with 1 runs
